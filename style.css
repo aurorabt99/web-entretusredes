@@ -1,0 +1,323 @@
+/*VARIABLES*/
+:root{
+    --color_negro: #121212;
+    --color_tuquesa: #63C8C8;
+    --color_turquesa-oscuro: #00A6A6;
+    --color_fondo: #F5F5F7;
+    --color_letras: #404A59;
+}
+/*RESET+BASE*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*TIPOGRAFÍAS*/
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-ExtraBold.woff2') format('woff2'),
+    url('fonts/Montserrat-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.woff2') format('woff2'),
+    url('fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color: var(--color_fondo);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color_letras);
+}
+
+/*TEXTOS*/
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+}
+h2{ font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;}
+h4{font-size: 1.5em;}
+h5{ font-size: 1.30em;}
+p{ font-size: 1.1em;}
+
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+/*NAVBAR*/
+nav{
+    display: block;
+    position: relative;
+    padding: 25px 20px;
+    background-color: #fff;    
+}
+
+nav ul a{
+    display: inline-block;
+    color: var(--color_negro);
+    transition: color 0.3s ease;
+}
+
+nav ul a span{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+nav ul a:hover,
+nav ul a:active{
+    color: var(--color_tuquesa);
+}
+
+nav ul a:hover span,
+nav ul a:active span{
+    transform: scale(1.1);
+}
+
+.logo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.logo--parte1{color: var(--color_negro);}
+.logo--parte2{color: var(--color_turquesa-oscuro);}
+.logo--parte3{color: var(--color_tuquesa);}
+
+.menu{
+    display: none;
+    margin-top: 30px;
+    list-style: none;
+}
+
+.menu.active, .toggle{
+    display: block;
+}
+
+.menu li{
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.menu li a{
+    display: inline-block;
+    width: 100%;
+}
+
+.toggle{
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 2.25em;
+}
+
+.toggle a{
+    color: var(--color_negro);
+    transition: color 0.3 ease;
+}
+
+.toggle a:hover,
+.toggle a:active{
+    color: var(--color_tuquesa);
+}
+
+/*HERO*/
+/*hero figuras*/
+
+.hero-shape--shape1,
+.hero-shape--shape2,
+.hero-shape--shape3,
+.hero-shape--shape4,
+.hero-shape--shape5 {
+  position: absolute;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0; /*va por detrás del texto*/
+}
+
+.hero-shape--shape1{
+    top: -110px;
+    left: -100px;
+    width: 400px; /*desde html meto la animación*/
+}
+
+.hero-shape--shape2{
+    top: 170px;
+    left: 130px;
+    width: 400px;
+}
+
+.hero-shape--shape3 { /*azul*/
+    top: 20%;
+    left:50%;
+    width: 120px;
+}
+
+.hero-shape--shape4 { /*blanco*/
+    top: 7%;
+    left: 60%;
+    width: 140px;
+}
+
+.hero-shape--shape5 { /*rosa*/
+    bottom: 10%;
+    left: 15%;
+    width: 130px;
+}
+
+
+
+/*hero principal*/
+
+#hero{
+    height: 75vh;
+    color: #fff;
+    background-color: #121212;
+    padding: 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero-text{
+    padding-right: 20px;
+    max-width: 800px; /*que no se alargue mucho el texto*/
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.hero-text p{
+    margin-top: 25px;
+}
+
+
+.hero-text,
+.hero-buttons{
+    position: relative; /*para las formas*/
+    z-index: 1; /*va por delante*/
+}
+/*hero botones*/
+
+.hero-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /*separacion entre botones*/
+    width: 100%; 
+}
+
+.hero-buttons a{
+    width: 100%; /*respecto al elemento padre hero buttons*/
+}
+
+.button-part1,
+.button-part2{ /*juntos para poder hacer el transform*/
+    display: inline-block; /*para poder darle width, border, etc, el a tiene inline por defecto*/
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 100%; /*se pone luego el % al a*/
+    font-size: 1.3em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.button-part1{
+    background-color: var(--color_turquesa-oscuro);
+    border: 2px solid var(--color_turquesa-oscuro);
+}
+.button-part1:hover{
+    transform: scale(1.035);
+}
+
+.button-part2{
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.button-part2:hover{
+    background-color: #fff;
+    color: var(--color_negro);
+    transform: scale(1.035);
+}
+
+@media screen and (min-width: 1200px){ /*VERSION ESCRITORIO*/
+
+    nav {
+        display: flex;
+        align-items: center; /*centrar verticalmente*/
+        justify-content: center;
+        padding: 25px 20px;
+    }
+
+    nav .container{  /*para que cuadre bien el nav en pantallas grandes*/
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1400px;
+    }
+
+    .menu {
+        display: flex !important; /*mostrar siempre en flex*/
+        margin-top: 0; /*import*/
+        list-style: none;
+        gap: 20px;
+    }
+
+    .menu li {
+        text-align: left;
+        padding: 0; /*quita padding vertical, import*/
+    }
+
+    .menu li a {
+        display: inline-block; /*mantener inline-block para hover*/
+        position: relative;
+        width: auto; 
+        transition: color 0.3s ease;
+    }
+
+    .menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color_tuquesa);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .menu li a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .menu li a span:hover{
+        transform: none;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .logo { /*logo y menu separados*/
+        margin-right: auto;
+    }
+
+}

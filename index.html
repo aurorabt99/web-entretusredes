@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aurora Becerra Tejada">
+    <title>Entre tus redes</title>
+    <meta name="description" content="Agencia de marketing digital especializada en branding, gestión de redes sociales y diseño web en Málaga.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/webp/favicon2.ico">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    
+</head>
+<body>
+    <header>
+            <nav>
+            <div class="container"> <!--así se ve bien en pantallas grandes, al ser mobile first-->
+                <div class="logo">
+                    <a href="#hero">
+                        <span class="logo--parte1">Entre</span><span class="logo--parte2">Tus</span><span class="logo--parte3">Redes</span>
+                    </a>
+                </div>
+                <div class="toggle">
+                    <a href="#"><ion-icon name="menu"></ion-icon></a>
+                </div>
+
+                <ul class="menu">
+                    <li><a href="#hero"><span>Inicio</span></a></li>
+                    <li><a href="#"><span>Servicios</span></a></li>
+                    <li><a href="#"><span>Proyectos</span></a></li>
+                    <li><a href="#"><span>Testimonios</span></a></li>
+                    <li><a href="#"><span>Contacto</span></a></li>
+                </ul>
+            </div>
+            </nav>
+
+            <!--MENU DESPEGABLE-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            
+            <script>
+
+                $(function(){
+                    $(".toggle").on("click", function(){
+                        if($(".menu").hasClass("active")){
+                            $(".menu").removeClass("active");
+                            $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
+                        } else{
+                            $(".menu").addClass("active");
+                            $(this).find("a").html("<ion-icon name='close'></ion-icon>");
+                        }
+                    });
+                });
+
+            </script>
+    </header>
+    <!--hero-->
+    <section id="hero">
+        <!--figuras-->
+        <img src="assets/shapes/forma1.svg" class="hero-shape--shape1" alt="forma1">
+        <img src="assets/shapes/forma2.svg" class="hero-shape--shape2" alt="forma2">
+        <img src="assets/shapes/circulo1.svg" class="hero-shape--shape3" alt="forma3">
+        <img src="assets/shapes/circulo2.svg" class="hero-shape--shape4" alt="forma4">
+        <img src="assets/shapes/circulo3.svg" class="hero-shape--shape5" alt="forma5">
+
+        <!--contenido principal-->
+        <div class="hero-text">
+            <h1>Potenciamos tu presencia digital</h1>
+            <p>Somos expertos en branding, gestión de redes sociales y diseño web en Málaga. Creamos estrategias personalizadas para hacer crecer tu negocio.</p>
+        </div>
+        <div class="hero-buttons">
+            <a href="#" class="button-part1">Nuestros servicios</a>
+            <a href="#" class="button-part2">Contactar ahora</a>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <!-- 
+        Web diseñada y desarrollada por Aurora Becerra Tejada 
+        https://github.com/aurorabt99 - 
+        Año: 2025 
+    -->
+
+</body>
+</html>
